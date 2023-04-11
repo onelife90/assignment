@@ -1,0 +1,9 @@
+:root {
+  --screen-width: 400px;
+  --vertical-space: 40px;
+  --horizontal-space: 30px;
+  --color-tone: #222222;
+  --gray-color: #a7aaad;
+  --play-bar-height: 5px;
+  --play-bar-radius: 2px;
+}

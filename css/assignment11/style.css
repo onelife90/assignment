@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap");
+
+@import "reset.css";
+@import "variables.css";
+
+/* components */
+@import "components/screens.css";
+@import "components/menu-bar.css";
+@import "components/song-data.css";
+@import "components/buttons.css";
+@import "components/songs.css";
+@import "components/play-box.css";
+@import "components/play-page.css";
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: whitesmoke;
+  color: #07203a;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}

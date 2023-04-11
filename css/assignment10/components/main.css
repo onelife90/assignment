@@ -1,0 +1,141 @@
+main {
+  padding: 100px 30px 0px 30px;
+}
+
+section {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: x-large;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.recommend__cover img {
+  border-radius: 10px;
+}
+
+.recommend__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  margin-left: 20px;
+}
+
+.recommend__title {
+  font-size: x-large;
+}
+
+.recommend__writer {
+  font-size: 20px;
+  margin-top: 20px;
+  color: rgb(182, 178, 178);
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  margin: 20px 0px;
+}
+
+.stars--yellow {
+  color: #ffce33;
+}
+
+.stars--grey {
+  color: rgba(204, 203, 203, 0.5);
+}
+
+.recommend__categories {
+  display: flex;
+  width: 250px;
+  justify-content: space-around;
+}
+
+.recommend__category {
+  display: flex;
+  width: 100px;
+  height: 35px;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommend__buy {
+  display: flex;
+}
+
+.bookmark {
+  display: flex;
+  position: relative;
+}
+
+.bookmark-dot {
+  width: 50px;
+  height: 50px;
+  background-color: #ffce33;
+  border-radius: 50%;
+}
+
+.bookmark-img {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+}
+
+.buy {
+  background-color: #020f38;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 150px;
+  margin-left: 50px;
+}
+
+.books {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+}
+
+.books__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.books__list img {
+  width: 150px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.article__cover img {
+  width: 170px;
+  border-radius: 5px;
+}
+
+.article__info {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 20px;
+  justify-content: space-between;
+}
+
+.article__title {
+  font-size: xx-large;
+}
+
+.article__content {
+  color: gray;
+  line-height: 25px;
+}

@@ -1,0 +1,191 @@
+:root {
+  --white-box-margin: 20px;
+  --white-box-width: 200px;
+  --white-box-height: 400px;
+
+  --color-box-margin: 5px;
+  --color-box-width: 190px;
+
+  --small-box-height: 15px;
+  --big-box-height: 245px;
+}
+
+body {
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section {
+  display: flex;
+}
+
+.tomato,
+.teal,
+.burlywood,
+.thistle {
+  width: var(--white-box-width);
+  height: var(--white-box-height);
+  background-color: white;
+  margin: var(--white-box-margin);
+  position: relative;
+}
+
+.tomato :first-child {
+  background-color: tomato;
+  width: var(--color-box-width);
+  height: 15px;
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: var(--color-box-margin);
+  bottom: var(--color-box-margin);
+}
+
+.tomato h2 {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 30px;
+}
+
+.tomato h4 {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.tomato :last-child {
+  background-color: tomato;
+  width: var(--color-box-width);
+  height: var(--big-box-height);
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: 150px;
+  bottom: var(--color-box-margin);
+}
+
+.teal :first-child {
+  background-color: teal;
+  width: var(--color-box-width);
+  height: 15px;
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: var(--color-box-margin);
+  bottom: var(--color-box-margin);
+}
+
+.teal h2 {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 30px;
+}
+
+.teal h4 {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.teal :last-child {
+  background-color: teal;
+  width: var(--color-box-width);
+  height: var(--big-box-height);
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: 150px;
+  bottom: var(--color-box-margin);
+}
+
+.burlywood :first-child {
+  background-color: burlywood;
+  width: var(--color-box-width);
+  height: 15px;
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: var(--color-box-margin);
+  bottom: var(--color-box-margin);
+}
+
+.burlywood h2 {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 30px;
+}
+
+.burlywood h4 {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.burlywood :last-child {
+  background-color: burlywood;
+  width: var(--color-box-width);
+  height: var(--big-box-height);
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: 150px;
+  bottom: var(--color-box-margin);
+}
+
+.thistle :first-child {
+  background-color: thistle;
+  width: var(--color-box-width);
+  height: 15px;
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: var(--color-box-margin);
+  bottom: var(--color-box-margin);
+}
+
+.thistle h2 {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 30px;
+}
+
+.thistle h4 {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.thistle :last-child {
+  background-color: thistle;
+  width: var(--color-box-width);
+  height: var(--big-box-height);
+  position: absolute;
+  left: var(--color-box-margin);
+  right: var(--color-box-margin);
+  top: 150px;
+  bottom: var(--color-box-margin);
+}

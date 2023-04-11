@@ -1,0 +1,39 @@
+.song-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.song-list__column {
+  display: flex;
+  align-items: center;
+}
+
+.song-list__column img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.song-list__singer {
+  font-weight: 600;
+  color: var(--gray-color);
+  margin-bottom: 10px;
+}
+
+.song-list__title {
+  font-size: large;
+  font-weight: 800;
+}
+
+.song-list__column i {
+  color: var(--gray-color);
+}
+
+.curren-song-list {
+  box-shadow: 0px 15px 15px rgba(165, 162, 162, 0.3);
+}

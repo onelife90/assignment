@@ -1,0 +1,8 @@
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-bar i {
+  color: var(--color-tone);
+}

@@ -1,0 +1,16 @@
+.screens {
+  background-color: white;
+  width: var(--screen-width);
+  height: 800px;
+  border-radius: 20px;
+  border: none;
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.screen-box {
+  width: var(--screen-width);
+  margin: 30px;
+  position: relative;
+}
