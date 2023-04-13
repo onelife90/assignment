@@ -22,16 +22,17 @@ const securityLogger = (req, res, next) => {
 };
 
 const protectorMiddleware = (req, res, next) => {
-  console.log("Sorry. This is protect zone.");
-  res.redirect("..");
+  if (req.path === "/protected") {
+    return res
+      .status(403)
+      .send("<h1>403</h1><h3>Sorry. This is protect zone.</h3>");
+  }
+  next();
 };
 
-app.use(urlLogger);
-app.use(timeLogger);
-app.use(securityLogger);
-app.get("/", (req, res) => res.send("<h1>Home</h1>"));
+app.use(urlLogger, timeLogger, securityLogger, protectorMiddleware);
 
-app.use(protectorMiddleware);
+app.get("/", (req, res) => res.send("<h1>Home</h1>"));
 app.get("/protected", (req, res) => res.send("<h1>Protected</h1>"));
 
 const hadleListening = () => {
