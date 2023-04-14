@@ -1,4 +1,7 @@
 import express from "express";
+import globalRouter from "./routers/globalRouter";
+import userRouter from "./routers/userRouter";
+import storyRouter from "./routers/storyRouter";
 
 const PORT = "4005";
 const app = express();
