@@ -1,4 +1,5 @@
 import express from "express";
+import { editStories, deleteStories } from "../controllers/storyController";
 
 const storyRouter = express.Router();
 
