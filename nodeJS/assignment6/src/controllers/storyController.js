@@ -1,5 +1,19 @@
-export const trending = (req, res) => res.send("<h1>Trending</h1>");
-export const newest = (req, res) => res.send("<h1>New</h1>");
-export const stories = (req, res) => res.send("<h1>Stories</h1>");
-export const editStories = (req, res) => res.send("<h1>Edit Stories</h1>");
-export const deletestories = (req, res) => res.send("<h1>Delete Stories</h1>");
+export const home = (req, res) => res.render("home", { pageTitle: "Home" });
+export const trending = (req, res) =>
+  res.render("trending", { pageTitle: "Trending" });
+export const newest = (req, res) => res.render("new", { pageTitle: "New" });
+export const stories = (req, res) =>
+  res.render("stories", {
+    pageTitle: "Stories",
+    storiesId: `${req.params.id}`,
+  });
+export const editStories = (req, res) =>
+  res.render("editStories", {
+    pageTitle: "Edit Stories",
+    storiesId: `${req.params.id}`,
+  });
+export const deletestories = (req, res) =>
+  res.render("deletestories", {
+    pageTitle: "Delete Stories",
+    storiesId: `${req.params.id}`,
+  });
