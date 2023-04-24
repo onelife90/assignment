@@ -7,5 +7,5 @@ block content
         input(name="year", placeholder="Filter by year", type="number", min="0")
         input(name="rating", placeholder="Filter by rating", type="number", min="0")
         input(value="Search", type="submit")
-    each movie in movies 
+    each movie in filterYear 
         +getTitle(movie)

@@ -1,0 +1,7 @@
+extends layout 
+
+block content 
+    h1=getMovie.title
+    p=getMovie.synopsis
+    each genre in getMovie.genres
+        li=genre

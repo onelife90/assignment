@@ -3,7 +3,7 @@ import path from "path";
 import "./db";
 import movieRouter from "./movieRouter";
 
-const PORT = "4008";
+const PORT = "8000";
 
 const app = express();
 
