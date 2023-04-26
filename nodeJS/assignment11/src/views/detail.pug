@@ -1,0 +1,13 @@
+extends base
+
+block content 
+    div
+        h2=movie.title
+        p=movie.summary
+        h4=movie.year 
+        h5 #{movie.rating} / 5
+        ul 
+            each genre in movie.genres 
+                li=genre
+        hr
+        

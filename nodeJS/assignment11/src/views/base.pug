@@ -1,0 +1,19 @@
+doctype html 
+html(lang="ko")
+    head 
+        title #{pageTitle} | assignment11 
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
+    body 
+        header 
+            h1=pageTitle 
+                nav
+                    ul 
+                        li 
+                            a(href="/") Home
+                        li 
+                            a(href="/upload") Upload 
+                        li 
+                            a(href="/search") Search
+        main
+            block content  
+

@@ -1,0 +1,12 @@
+extends base
+
+block content 
+    if errorMessage
+        span=errorMessage
+    form(method="POST")
+        input(name="title", required, placeholder="Title", type="text")
+        input(name="summary", required, placeholder="Summary", type="text")
+        input(name="year", required, placeholder="Year", type="number", min=0)
+        input(name="rating", required, placeholder="Rating", type="number", max=5)
+        input(name="genres", placeholder="Genres", type="text")
+        input(type="submit", value="Upload")
