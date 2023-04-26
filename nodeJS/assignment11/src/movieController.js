@@ -23,7 +23,7 @@ export const postUpload = async (req, res) => {
       summary,
       year,
       rating,
-      genres,
+      genres: Movie.formatGenres(genres),
     });
     return res.redirect("/");
   } catch (error) {
@@ -43,18 +43,45 @@ export const detail = async (req, res) => {
   return res.render("detail", { pageTitle: "Movie Detail", movie });
 };
 
-export const getEdit = (req, res) => {
-  return res.send("NOT YET");
+export const getEdit = async (req, res) => {
+  const { id } = req.params;
+  const movie = await Movie.findById(id);
+  if (!movie) {
+    return res.render("404", { pageTitle: "Movie not found." });
+  }
+  return res.render("edit", { pageTitle: `Edit:${movie.title}`, movie });
 };
 
-export const postEdit = (req, res) => {
-  return res.send("NOT YET");
+export const postEdit = async (req, res) => {
+  const { id } = req.params;
+  const movie = await Movie.exists({ _id: id });
+  const { title, summary, year, rating, genres } = req.body;
+  if (!movie) {
+    return res.render("404", { pageTitle: "Movie not found." });
+  }
+  await Movie.findByIdAndUpdate(id, {
+    title,
+    summary,
+    year,
+    rating,
+    genres: Movie.formatGenres(genres),
+  });
+  return res.redirect(`/movies/${id}`);
 };
 
-export const deleteMovies = (req, res) => {
-  return res.send("NOT YET");
+export const deleteMovies = async (req, res) => {
+  const { id } = req.params;
+  await Movie.findByIdAndDelete(id);
+  return res.redirect("/");
 };
 
-export const search = (req, res) => {
-  return res.send("NOT YET");
+export const search = async (req, res) => {
+  const { keyword } = req.query;
+  let movies = [];
+  if (keyword) {
+    movies = await Movie.find({
+      title: { $regex: new RegExp(keyword, "i") },
+    });
+  }
+  return res.render("search", { pageTitle: "Search", movies });
 };

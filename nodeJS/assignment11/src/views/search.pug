@@ -1,0 +1,10 @@
+extends base
+include mixins/movie
+
+block content
+    form(method="GET")
+        input(name="keyword", placeholder="Search by title", type="text")
+        input(type="submit", value="Search Movies!")
+    div
+        each movie in movies 
+            +movie(movie)

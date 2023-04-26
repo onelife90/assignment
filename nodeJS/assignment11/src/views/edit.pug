@@ -1,0 +1,11 @@
+extends base
+
+block content 
+    h4 Update Movie
+    form(method="POST")
+        input(name="title", required, placeholder="Movie Title", value=movie.title)
+        input(name="summary", required, placeholder="Movie Summary", value=movie.summary)
+        input(name="year", required, placeholder="Year", type="number", min=0, value=movie.year)
+        input(name="rating", required, placeholder="Rating", type="number", max=5, value=movie.rating)
+        input(name="genres", placeholder="Genres, sepearated by comma.", type="text", value=movie.genres.join())
+        input(type="submit", value="Save")

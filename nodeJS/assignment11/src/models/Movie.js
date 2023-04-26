@@ -45,6 +45,10 @@ if (YOUR_USERNAME.includes("@")) {
   throw Error("❌  Please remove the @ from your username  ❌");
 }
 
+MovieSchema.static("formatGenres", function (genres) {
+  return genres.split(",");
+});
+
 const model = mongoose.model(`Movie_${YOUR_USERNAME}`, MovieSchema);
 
 export default model;
