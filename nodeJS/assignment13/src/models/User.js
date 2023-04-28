@@ -32,6 +32,11 @@ if (YOUR_USERNAME.includes("@")) {
   throw Error("❌  Please remove the @ from your username  ❌");
 }
 
+UserSchema.pre("save", async function () {
+  this.password = await bcrypt.hash(this.password, 3);
+  console.log(this.password);
+});
+
 const model = mongoose.model(`User_${YOUR_USERNAME}`, UserSchema);
 
 export default model;

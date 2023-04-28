@@ -1,8 +1,11 @@
 extends templates/layout
 
 block content 
+    if errorMessage
+        p=errorMessage
     form(method="POST")
         input(name="username", required, placeholder="username", type="text")
         input(name="password", required, placeholder="password", type="password")
+        input(name="password2", required, placeholder="Confirm password", type="password")
         input(name="name", required, placeholder="name", type="text")
         input(type="submit", value="Join")

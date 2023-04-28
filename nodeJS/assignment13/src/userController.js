@@ -15,8 +15,27 @@ export const getJoin = (req, res) => {
   return res.render("join", { pageTitle: "Join" });
 };
 
-export const postJoin = (req, res) => {
-  return res.end();
+export const postJoin = async (req, res) => {
+  const { username, password, password2, name } = req.body;
+  const pageTitle = "join";
+  const user = await User.findOne({ username });
+  if (password !== password2) {
+    return res.status(400).render("join", {
+      pageTitle,
+      errorMessage: "Wrong password confirmation.",
+    });
+  }
+  if (user) {
+    return res
+      .status(400)
+      .render("join", { pageTitle, errorMessage: "Username already taken." });
+  }
+  await User.create({
+    username,
+    password,
+    name,
+  });
+  return res.render("join", { pageTitle });
 };
 
 export const getLogin = (req, res) => {
