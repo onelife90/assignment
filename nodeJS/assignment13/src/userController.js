@@ -35,7 +35,7 @@ export const postJoin = async (req, res) => {
       password,
       name,
     });
-    return res.render("join", { pageTitle });
+    return res.render("/login");
   } catch (error) {
     return res.status(400).render("join", {
       pageTitle,
