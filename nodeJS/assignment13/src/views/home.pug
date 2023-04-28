@@ -1,3 +1,15 @@
 extends templates/layout
 
 block content
+  nav 
+    ul
+      li 
+        a(href="/") Home
+      if (loggedIn)
+        li 
+          a(href="/profile") Profile of #{loggedInUser.name}
+      else
+        li 
+          a(href="/join") Join
+        li 
+          a(href="/login") Login
