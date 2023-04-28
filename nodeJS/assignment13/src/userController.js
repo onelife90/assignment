@@ -5,6 +5,7 @@ So import User from "./models"; will work!
 You can do User.find() or whatever you need like normal!
 */
 import User from "./models/User.js";
+import bcrypt from "bcrypt";
 
 export const home = (req, res) => {
   return res.render("home", { pageTitle: "Home" });
@@ -35,7 +36,7 @@ export const postJoin = async (req, res) => {
       password,
       name,
     });
-    return res.render("/login");
+    return res.redirect("/login");
   } catch (error) {
     return res.status(400).render("join", {
       pageTitle,
@@ -49,5 +50,22 @@ export const getLogin = (req, res) => {
 };
 
 export const postLogin = async (req, res) => {
-  return res.end();
+  const { username, password } = req.body;
+  const pageTitle = "Login";
+  const user = await User.findOne({ username });
+  const ok = await bcrypt.compare(password, user.password);
+  if (!user) {
+    return res.status(400).render("login", {
+      pageTitle,
+      errorMessage: "An account with this username does not exists.",
+    });
+  }
+  if (!ok) {
+    return res
+      .status(400)
+      .render("login", { pageTitle, errorMessage: "Wrong password." });
+  }
+  req.session.loggedIn = true;
+  req.session.user = user;
+  return res.redirect("/");
 };
