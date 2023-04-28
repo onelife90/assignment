@@ -12,7 +12,7 @@ export const home = (req, res) => {
 };
 
 export const getJoin = (req, res) => {
-  return res.end();
+  return res.render("join", { pageTitle: "Join" });
 };
 
 export const postJoin = (req, res) => {
@@ -20,7 +20,7 @@ export const postJoin = (req, res) => {
 };
 
 export const getLogin = (req, res) => {
-  return res.end();
+  return res.render("login", { pageTitle: "Login" });
 };
 
 export const postLogin = (req, res) => {

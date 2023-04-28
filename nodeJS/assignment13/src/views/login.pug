@@ -1,0 +1,7 @@
+extends templates/layout
+
+block content
+    form(method="POST")
+        input(name="username", required, placeholder="username", type="text")
+        input(name="password", required, placeholder="password", type="password")
+        input(type="submit", value="Login")
