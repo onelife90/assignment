@@ -1,16 +1,16 @@
-import "./db";
-import "./models/User";
+import "./db.js";
+import "./models/User.js";
 import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
 import session from "express-session";
-import userRouter from "./userRouter";
-import { localsMiddleware } from "./middlewares";
+import userRouter from "./userRouter.js";
+import { localsMiddleware } from "./middlewares.js";
 
 const PORT = 8000;
 const app = express();
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", process.cwd() + "/src/views");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   session({

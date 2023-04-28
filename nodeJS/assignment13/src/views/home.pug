@@ -1,4 +1,12 @@
 extends templates/layout
 
 block content
-  h1 Add your magic here
+  h1=pageTitle
+  nav 
+    ul
+      li 
+        a(href="/") Home
+      li 
+        a(href="/join") Join
+      li 
+        a(href="/login") Login

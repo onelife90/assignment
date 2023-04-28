@@ -7,8 +7,8 @@ PLEASE DONT TOUCH THIS FILE
 mongoose.connect(
   "mongodb+srv://wetubeadmin:wetube4ever@cluster0.uufes.mongodb.net/wetube?retryWrites=true&w=majority",
   {
-    useNewUrlParser: true,
-    useFindAndModify: false,
+    // useNewUrlParser: true,
+    // useFindAndModify: false,
   }
 );
 
