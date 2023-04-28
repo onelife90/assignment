@@ -5,7 +5,6 @@ So import User from "./models"; will work!
 You can do User.find() or whatever you need like normal!
 */
 import User from "./models/User.js";
-import express from "express";
 
 export const home = (req, res) => {
   return res.render("home", { pageTitle: "Home" });
@@ -30,18 +29,25 @@ export const postJoin = async (req, res) => {
       .status(400)
       .render("join", { pageTitle, errorMessage: "Username already taken." });
   }
-  await User.create({
-    username,
-    password,
-    name,
-  });
-  return res.render("join", { pageTitle });
+  try {
+    await User.create({
+      username,
+      password,
+      name,
+    });
+    return res.render("join", { pageTitle });
+  } catch (error) {
+    return res.status(400).render("join", {
+      pageTitle,
+      errorMessage: error._message,
+    });
+  }
 };
 
 export const getLogin = (req, res) => {
   return res.render("login", { pageTitle: "Login" });
 };
 
-export const postLogin = (req, res) => {
+export const postLogin = async (req, res) => {
   return res.end();
 };
