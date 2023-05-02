@@ -1,0 +1,8 @@
+extends base
+
+block content
+    h1 TXT2HTML!
+    main
+        form(method="POST", action="/read", enctype="multipart/form-data")
+            input(name="text", type="file", accept="text/plain")
+            input(type="submit", value="Convert!")
