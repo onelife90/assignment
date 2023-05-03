@@ -1,10 +1,13 @@
 import fs from "fs";
 
 export const home = (req, res) => {
-  return res.render("home", { pageTitle: "Home" });
+  fs.readdir("uploads/", function (err, files) {
+    console.log(files);
+    return res.render("home", { pageTitle: "Home", files });
+  });
 };
 
-export const read = async (req, res) => {
+export const read = (req, res) => {
   const {
     file: { path },
   } = req;

@@ -6,3 +6,9 @@ block content
         form(method="POST", action="/read", enctype="multipart/form-data")
             input(name="text", type="file", accept="text/plain")
             input(type="submit", value="Convert!")
+        h2 File List
+        each file in files
+            li
+                a(href="")=file
+        else 
+            li Sorry nothing found.
