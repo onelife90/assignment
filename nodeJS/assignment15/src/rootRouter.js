@@ -1,5 +1,5 @@
 import express from "express";
-import { home, read } from "./rootController";
+import { home, getRead, postRead, show } from "./rootController";
 import { uploadFileMiddleware } from "./middleware";
 
 const rootRouter = express.Router();
@@ -7,7 +7,8 @@ const rootRouter = express.Router();
 rootRouter.route("/").get(home);
 rootRouter
   .route("/read")
-  .get(read)
-  .post(uploadFileMiddleware.single("text"), read);
+  .get(getRead)
+  .post(uploadFileMiddleware.single("text"), postRead);
+rootRouter.get("/read/:id", show);
 
 export default rootRouter;
